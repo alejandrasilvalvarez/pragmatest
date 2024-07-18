@@ -1,4 +1,4 @@
-// ignore_for_file: avoid_print
+// ignore_for_file: avoid_print, always_specify_types, unnecessary_final, cascade_invocations, lines_longer_than_80_chars
 
 import 'dart:io';
 
@@ -56,34 +56,42 @@ void main() {
             final filePath = File('${subDirPath.path}/pages.dart');
             filePath.createSync();
             filePath.writeAsStringSync(
-                'library com.pragmatest.app.$formattedFeatureName.presentation.pages;\n');
+              'library com.pragmatest.app.$formattedFeatureName.presentation.pages;\n',
+            );
             print('Created file with content: ${filePath.path}');
           } else if (subDir == 'widgets') {
             final filePath = File('${subDirPath.path}/widgets.dart');
             filePath.createSync();
             filePath.writeAsStringSync(
-                'library com.pragmatest.app.$formattedFeatureName.presentation.widgets;\n');
+              'library com.pragmatest.app.$formattedFeatureName.presentation.widgets;\n',
+            );
             print('Created file: ${filePath.path}');
           }
 
           // Create the <nombre del feature>_repository.dart file in domain/repositories
           if (mainDir == 'domain' && subDir == 'repositories') {
             final repositoryFilePath = File(
-                '${subDirPath.path}/${featureNameWithUnderscores}_repository.dart');
+              '${subDirPath.path}/${featureNameWithUnderscores}_repository.dart',
+            );
             repositoryFilePath.createSync();
             repositoryFilePath.writeAsStringSync(
-                'abstract class ${featureNameCapitalized}Repository {\n}\n');
+              'abstract class ${featureNameCapitalized}Repository {\n}\n',
+            );
             print(
-                'Created repository file with content: ${repositoryFilePath.path}');
+              'Created repository file with content: ${repositoryFilePath.path}',
+            );
           }
           if (mainDir == 'data' && subDir == 'repositories') {
             final repositoryFilePath = File(
-                '${subDirPath.path}/${featureNameWithUnderscores}_repository_impl.dart');
+              '${subDirPath.path}/${featureNameWithUnderscores}_repository_impl.dart',
+            );
             repositoryFilePath.createSync();
             repositoryFilePath.writeAsStringSync(
-                'abstract class ${featureNameCapitalized}RepositoryImpl {\n}\n');
+              'abstract class ${featureNameCapitalized}RepositoryImpl {\n}\n',
+            );
             print(
-                'Created repository file with content: ${repositoryFilePath.path}');
+              'Created repository file with content: ${repositoryFilePath.path}',
+            );
           }
         }
       }
@@ -91,7 +99,7 @@ void main() {
   } catch (e) {
     print('Error creating directories or files: $e');
   }
-  final filePath = 'lib/core/util/injection_container.dart';
+  const filePath = 'lib/core/util/injection_container.dart';
 
   try {
     // Leer el archivo

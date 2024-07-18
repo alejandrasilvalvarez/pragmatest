@@ -34,7 +34,7 @@ Future<void> init() async {
     () => FetchCatDetailUseCase(repository: sl()),
   );
   sl.registerLazySingleton(
-    () => CreteNewMeasureUseCase(repository: sl()),
+    () => GetCatsListUsecase(repository: sl()),
   );
   // Repository
   sl.registerLazySingleton<CatDetailRepository>(

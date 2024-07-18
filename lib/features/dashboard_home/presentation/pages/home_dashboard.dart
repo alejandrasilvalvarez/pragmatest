@@ -8,6 +8,13 @@ class LandingPage extends StatefulWidget {
 }
 
 class _LandingPageState extends State<LandingPage> {
+  DashboardBloc dashboardBloc = sl<DashboardBloc>();
+  @override
+  void initState() {
+    super.initState();
+    dashboardBloc.add(const FetchCatsList());
+  }
+
   @override
   Widget build(BuildContext context) => Scaffold(
         backgroundColor: Colors.white,
@@ -15,27 +22,48 @@ class _LandingPageState extends State<LandingPage> {
           backgroundColor: Theme.of(context).colorScheme.onPrimary,
           surfaceTintColor: Colors.white,
           toolbarHeight: 160,
-          title: const Center(
+          title: Center(
             child: Column(
               children: <Widget>[
-                Text('Catbreeds'),
-                SizedBox(height: 4),
-                CommonInput(),
+                Text('cat_breeds'.tr),
+                const SizedBox(height: 4),
+                const CommonInput(),
               ],
             ),
           ),
         ),
-        body: const SingleChildScrollView(
-          child: Column(
-            mainAxisAlignment: MainAxisAlignment.start,
-            children: <Widget>[
-              CatbreedCard(
-                catbreed: 'Mestizo',
-                country: 'Colombia',
-                intelligence: '10',
-              ),
-              SizedBox(height: 8),
-            ],
+        body: SingleChildScrollView(
+          child: BlocBuilder<DashboardBloc, DashboardState>(
+            bloc: dashboardBloc,
+            builder: (BuildContext context, DashboardState state) {
+              if (state is DashboardStateLoading) {
+                return const Center(child: CircularProgressIndicator());
+              } else if (state is DashboardStateSuccessful) {
+                return Column(
+                  mainAxisAlignment: MainAxisAlignment.start,
+                  children: <Widget>[
+                    ...state.info.map(
+                      (CatModel e) => CatbreedCard(
+                        catbreed: e.name ?? '',
+                        country: e.origin ?? '',
+                        intelligence: '${e.intelligence}',
+                        imageReference: e.referenceImageId??'',
+                      ),
+                    ),
+                  ],
+                );
+              } else if (state is DashboardStateError) {
+                return WarningMessage(
+                  message: state.errorMessage,
+                  isError: true,
+                );
+              } else {
+                return WarningMessage(
+                  message: 'default_error'.tr,
+                  isError: true,
+                );
+              }
+            },
           ),
         ),
       );

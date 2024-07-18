@@ -5,12 +5,14 @@ class CatbreedCard extends StatefulWidget {
     required this.catbreed,
     required this.country,
     required this.intelligence,
+    required this.imageReference,
     Key? key,
   }) : super(key: key);
 
   final String catbreed;
   final String country;
   final String intelligence;
+  final String imageReference;
 
   @override
   State<CatbreedCard> createState() => _CatbreedCardState();
@@ -45,7 +47,24 @@ class _CatbreedCardState extends State<CatbreedCard> {
                     child: AspectRatio(
                       aspectRatio: 1,
                       child: Image.network(
-                        'https://comunidad.retorn.com/wp-content/uploads/2018/09/gatitos.jpg',
+                        'https://cdn2.thecatapi.com/images/${widget.imageReference}.jpg',
+                        loadingBuilder: (
+                          BuildContext context,
+                          Widget child,
+                          ImageChunkEvent? loadingProgress,
+                        ) {
+                          if (loadingProgress == null) {
+                            return child;
+                          }
+                          return Center(
+                            child: CircularProgressIndicator(
+                              value: loadingProgress.expectedTotalBytes != null
+                                  ? loadingProgress.cumulativeBytesLoaded /
+                                      loadingProgress.expectedTotalBytes!
+                                  : null,
+                            ),
+                          );
+                        },
                         fit: BoxFit.cover,
                         errorBuilder: (
                           BuildContext context,
@@ -78,7 +97,7 @@ class _CatbreedCardState extends State<CatbreedCard> {
                           ),
                           GestureDetector(
                             onTap: () {
-                             Get.toNamed('detail_page');
+                              Get.toNamed('detail_page');
                             },
                             child: const Text(
                               'Ver Más',

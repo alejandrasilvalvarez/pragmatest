@@ -18,7 +18,7 @@ class DashboardStateSuccessful extends DashboardState {
   const DashboardStateSuccessful({
     required this.info,
   });
-  final dynamic info;
+  final List<CatModel> info;
 }
 
 class DashboardStateLoading extends DashboardState {
