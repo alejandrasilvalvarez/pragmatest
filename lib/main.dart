@@ -1,6 +1,7 @@
 import 'dart:async';
 
 import 'package:flutter/material.dart';
+import 'package:flutter_dotenv/flutter_dotenv.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:get/get.dart';
 import 'core/internationalization/internationalization.dart';
@@ -12,6 +13,7 @@ void main() async {
     () async {
       WidgetsFlutterBinding.ensureInitialized();
       try {
+        await dotenv.load(fileName: '.env');
         await di.init();
       } catch (e) {
         //
