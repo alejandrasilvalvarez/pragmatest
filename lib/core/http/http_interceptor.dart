@@ -3,7 +3,7 @@
 import 'package:dio/dio.dart';
 import 'package:flutter/material.dart';
 
-import '../../commons/log.dart';
+import '../commons/log.dart';
 
 
 class DioInterceptor extends Interceptor {

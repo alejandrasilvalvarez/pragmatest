@@ -10,6 +10,12 @@ import '../../features/cat_detail/data/repositories/cat_detail_repository_impl.d
 import '../../features/cat_detail/domain/repositories/cat_detail_repository.dart';
 import '../../features/cat_detail/domain/use_cases/fetch_cat_detail.dart';
 import '../../features/cat_detail/presentation/bloc/detail_bloc/detail_bloc.dart';
+import '../../features/dashboard_home/data/datasources/dashboard_datasource.dart';
+import '../../features/dashboard_home/data/datasources/dashboard_datasource_impl.dart';
+import '../../features/dashboard_home/data/repositories/dashboard_home_repository_impl.dart';
+import '../../features/dashboard_home/domain/repositories/dashboard_home_repository.dart';
+import '../../features/dashboard_home/domain/use_cases/get_cats_list_usecase.dart';
+import '../../features/dashboard_home/presentation/bloc/bloc/dashboard_bloc.dart';
 import '../http/http_service.dart';
 import '../network/network_info.dart';
 
@@ -20,9 +26,15 @@ Future<void> init() async {
   sl.registerLazySingleton<DetailBloc>(
     DetailBloc.new,
   );
+  sl.registerLazySingleton<DashboardBloc>(
+    DashboardBloc.new,
+  );
   //Use Cases
   sl.registerLazySingleton(
     () => FetchCatDetailUseCase(repository: sl()),
+  );
+  sl.registerLazySingleton(
+    () => CreteNewMeasureUseCase(repository: sl()),
   );
   // Repository
   sl.registerLazySingleton<CatDetailRepository>(
@@ -31,11 +43,21 @@ Future<void> init() async {
       catDetailDatasource: sl(),
     ),
   );
+  sl.registerLazySingleton<DashboardHomeRepository>(
+    () => DashboardHomeRepositoryImpl(
+      networkInfo: sl(),
+      dashboardDataSource: sl(),
+    ),
+  );
 
   // Data Sources
   sl.registerLazySingleton<CatDetailDatasource>(
     () => CatDetailDatasourceImpl(client: sl()),
   );
+  sl.registerLazySingleton<DashboardDatasource>(
+    () => DashboardDatasourceImpl(client: sl()),
+  );
+
   // Core
   sl.registerLazySingleton(InternetConnectionChecker.new);
   sl.registerLazySingleton<NetworkInfo>(() => NetworkInfoImpl(sl()));
