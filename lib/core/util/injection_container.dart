@@ -15,7 +15,7 @@ import '../../features/dashboard_home/data/datasources/dashboard_datasource_impl
 import '../../features/dashboard_home/data/repositories/dashboard_home_repository_impl.dart';
 import '../../features/dashboard_home/domain/repositories/dashboard_home_repository.dart';
 import '../../features/dashboard_home/domain/use_cases/get_cats_list_usecase.dart';
-import '../../features/dashboard_home/presentation/bloc/bloc/dashboard_bloc.dart';
+import '../../features/dashboard_home/presentation/bloc/dashboard_bloc/dashboard_bloc.dart';
 import '../http/http_service.dart';
 import '../network/network_info.dart';
 

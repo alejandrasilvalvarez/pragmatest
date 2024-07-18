@@ -50,6 +50,9 @@ class _LandingPageState extends State<LandingPage> {
                         country: e.origin ?? '',
                         intelligence: '${e.intelligence}',
                         imageReference: e.referenceImageId ?? '',
+                        onTapCard: (){
+                          Get.toNamed('detail_page', arguments: e);
+                        },
                       ),
                     ),
                   ],

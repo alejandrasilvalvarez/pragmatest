@@ -6,6 +6,7 @@ class CatbreedCard extends StatefulWidget {
     required this.country,
     required this.intelligence,
     required this.imageReference,
+    required this.onTapCard,
     Key? key,
   }) : super(key: key);
 
@@ -13,6 +14,7 @@ class CatbreedCard extends StatefulWidget {
   final String country;
   final String intelligence;
   final String imageReference;
+  final void Function()? onTapCard;
 
   @override
   State<CatbreedCard> createState() => _CatbreedCardState();
@@ -90,9 +92,8 @@ class _CatbreedCardState extends State<CatbreedCard> {
                         children: <Widget>[
                           const SizedBox.shrink(),
                           GestureDetector(
-                            onTap: () {
-                              Get.toNamed('detail_page');
-                            },
+                            onTap: widget.onTapCard,
+                           
                             child: DecoratedBox(
                               decoration: BoxDecoration(
                                 color: const Color.fromARGB(

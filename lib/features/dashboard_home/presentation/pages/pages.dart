@@ -7,7 +7,7 @@ import 'package:get/get.dart';
 import '../../../../core/util/injection_container.dart';
 import '../../../common_widgets/warning_message.dart';
 import '../../data/models/cat_model.dart';
-import '../bloc/bloc/dashboard_bloc.dart';
+import '../bloc/dashboard_bloc/dashboard_bloc.dart';
 import '../widgets/widgets.dart';
 
 part './home_dashboard.dart';
