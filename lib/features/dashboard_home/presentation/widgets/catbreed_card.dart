@@ -31,7 +31,7 @@ class _CatbreedCardState extends State<CatbreedCard> {
           elevation: 0.5,
           shape: RoundedRectangleBorder(
             side: const BorderSide(
-              color: Colors.transparent,
+              color: Color.fromARGB(255, 194, 174, 229),
               width: 1,
             ),
             borderRadius: BorderRadius.circular(10),
