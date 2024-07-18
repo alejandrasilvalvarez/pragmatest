@@ -1,6 +1,7 @@
 import 'dart:async';
 
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:flutter_dotenv/flutter_dotenv.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:get/get.dart';
@@ -12,6 +13,11 @@ void main() async {
   await runZonedGuarded(
     () async {
       WidgetsFlutterBinding.ensureInitialized();
+      await SystemChrome.setPreferredOrientations(
+        <DeviceOrientation>[
+          DeviceOrientation.portraitUp,
+        ],
+      );
       try {
         await dotenv.load(fileName: '.env');
         await di.init();
@@ -39,7 +45,7 @@ class MyApp extends StatelessWidget {
         translations: Internationalization(),
         getPages: getRoutes,
         debugShowCheckedModeBanner: false,
-          localizationsDelegates: const <LocalizationsDelegate<dynamic>>[
+        localizationsDelegates: const <LocalizationsDelegate<dynamic>>[
           GlobalMaterialLocalizations.delegate,
           GlobalWidgetsLocalizations.delegate,
           GlobalCupertinoLocalizations.delegate,

@@ -48,36 +48,21 @@ class _CatbreedCardState extends State<CatbreedCard> {
                     borderRadius: BorderRadius.circular(10),
                     child: AspectRatio(
                       aspectRatio: 1,
-                      child: Image.network(
-                        'https://cdn2.thecatapi.com/images/${widget.imageReference}.jpg',
-                        loadingBuilder: (
-                          BuildContext context,
-                          Widget child,
-                          ImageChunkEvent? loadingProgress,
-                        ) {
-                          if (loadingProgress == null) {
-                            return child;
-                          }
-                          return Center(
-                            child: CircularProgressIndicator(
-                              value: loadingProgress.expectedTotalBytes != null
-                                  ? loadingProgress.cumulativeBytesLoaded /
-                                      loadingProgress.expectedTotalBytes!
-                                  : null,
-                            ),
-                          );
-                        },
-                        fit: BoxFit.cover,
-                        errorBuilder: (
-                          BuildContext context,
-                          Object error,
-                          StackTrace? stackTrace,
-                        ) =>
-                            Center(
+                      child: CachedNetworkImage(
+                        imageUrl:
+                            'https://cdn2.thecatapi.com/images/${widget.imageReference}.jpg',
+                        placeholder: (BuildContext context, String url) =>
+                            const Center(
+                          child: CircularProgressIndicator(),
+                        ),
+                        errorWidget:
+                            (BuildContext context, String url, Object error) =>
+                                Center(
                           child: Text(
                             'error_loading_image'.tr,
                           ),
                         ),
+                        fit: BoxFit.cover,
                       ),
                     ),
                   ),
@@ -93,7 +78,6 @@ class _CatbreedCardState extends State<CatbreedCard> {
                           const SizedBox.shrink(),
                           GestureDetector(
                             onTap: widget.onTapCard,
-                           
                             child: DecoratedBox(
                               decoration: BoxDecoration(
                                 color: const Color.fromARGB(

@@ -5,4 +5,15 @@ Map<String, String> appEsCo = <String, String>{
   'error_loading_image': '/ᐠ - ˕ -マ Miau, no se pudo cargar la imagen',
   'name_city': 'Nombre o ciudad',
   'view_more': 'Ver Más',
+  'intelligence': 'Inteligencia',
+  'intelectual_level': 'Este es el nivel de inteligencia asociado al michi',
+  'affection_level': 'Nivel de afecto',
+  'affection_level_desc':
+      'Este nivel dice qué tan consentido podría ser tu michi',
+  'dog_friendly': 'Amigable con perros',
+  'dog_friendly_desc':
+      '''Este nivel dice qué tan bien se llevaría el michi con perritos''',
+  'energy_level': 'Nivel de energía',
+  'energy_level_desc':
+      '''Este nivel dice qué tan activo será tu muchi, diviértete''',
 };
