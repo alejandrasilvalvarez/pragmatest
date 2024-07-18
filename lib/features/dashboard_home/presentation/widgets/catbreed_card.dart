@@ -31,7 +31,7 @@ class _CatbreedCardState extends State<CatbreedCard> {
           elevation: 0.5,
           shape: RoundedRectangleBorder(
             side: const BorderSide(
-              color: Color(0xFF5C6B7A),
+              color: Colors.transparent,
               width: 1,
             ),
             borderRadius: BorderRadius.circular(10),
@@ -71,64 +71,123 @@ class _CatbreedCardState extends State<CatbreedCard> {
                           Object error,
                           StackTrace? stackTrace,
                         ) =>
-                            const Text(
-                          'Failed to load image',
+                            Center(
+                          child: Text(
+                            'error_loading_image'.tr,
+                          ),
                         ),
                       ),
                     ),
                   ),
                 ),
-                Padding(
-                  padding: const EdgeInsets.symmetric(
-                    vertical: 12,
-                    horizontal: 16,
-                  ),
-                  child: Column(
-                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                    children: <Widget>[
-                      Row(
+                Column(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: <Widget>[
+                    Padding(
+                      padding: const EdgeInsets.all(16),
+                      child: Row(
                         mainAxisAlignment: MainAxisAlignment.spaceBetween,
                         children: <Widget>[
-                          Text(
-                            widget.catbreed,
-                            style: const TextStyle(
-                              fontSize: 16,
-                            ),
-                          ),
+                          const SizedBox.shrink(),
                           GestureDetector(
                             onTap: () {
                               Get.toNamed('detail_page');
                             },
-                            child: const Text(
-                              'Ver Más',
-                              style: TextStyle(
-                                fontSize: 16,
-                                color: Color(0xFF0081FF),
-                                fontWeight: FontWeight.w500,
+                            child: DecoratedBox(
+                              decoration: BoxDecoration(
+                                color: const Color.fromARGB(
+                                  255,
+                                  196,
+                                  128,
+                                  208,
+                                ),
+                                borderRadius: BorderRadius.circular(16),
+                              ),
+                              child: Padding(
+                                padding: const EdgeInsets.symmetric(
+                                  horizontal: 8,
+                                  vertical: 4,
+                                ),
+                                child: Text(
+                                  'view_more'.tr,
+                                  style: const TextStyle(
+                                    fontSize: 16,
+                                    color: Colors.white,
+                                    fontWeight: FontWeight.w500,
+                                  ),
+                                ),
                               ),
                             ),
                           ),
                         ],
                       ),
-                      Row(
-                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                        children: <Widget>[
-                          Text(
-                            widget.country,
-                            style: const TextStyle(
-                              fontSize: 16,
-                            ),
-                          ),
-                          Text(
-                            widget.intelligence,
-                            style: const TextStyle(
-                              fontSize: 16,
-                            ),
-                          ),
-                        ],
+                    ),
+                    DecoratedBox(
+                      decoration: BoxDecoration(
+                        borderRadius: BorderRadius.circular(8),
+                        color: const Color.fromARGB(
+                          255,
+                          184,
+                          150,
+                          190,
+                        ),
                       ),
-                    ],
-                  ),
+                      child: Padding(
+                        padding: const EdgeInsets.symmetric(
+                          horizontal: 16,
+                          vertical: 8,
+                        ),
+                        child: Column(
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: <Widget>[
+                            Text(
+                              widget.catbreed,
+                              style: const TextStyle(
+                                fontSize: 24,
+                                fontWeight: FontWeight.bold,
+                                color: Colors.white,
+                              ),
+                            ),
+                            Row(
+                              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                              children: <Widget>[
+                                Row(
+                                  children: <Widget>[
+                                    const Icon(
+                                      Icons.location_city,
+                                      color: Colors.white,
+                                    ),
+                                    Text(
+                                      widget.country,
+                                      style: const TextStyle(
+                                        fontSize: 16,
+                                        color: Colors.white,
+                                      ),
+                                    ),
+                                  ],
+                                ),
+                                Row(
+                                  children: <Widget>[
+                                    const Icon(
+                                      Icons.lightbulb,
+                                      color: Colors.white,
+                                    ),
+                                    Text(
+                                      widget.intelligence,
+                                      style: const TextStyle(
+                                        fontSize: 16,
+                                        color: Colors.white,
+                                      ),
+                                    ),
+                                  ],
+                                ),
+                              ],
+                            ),
+                          ],
+                        ),
+                      ),
+                    ),
+                  ],
                 ),
               ],
             ),

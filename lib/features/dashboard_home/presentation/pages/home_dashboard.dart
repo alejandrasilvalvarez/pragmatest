@@ -27,7 +27,9 @@ class _LandingPageState extends State<LandingPage> {
               children: <Widget>[
                 Text('cat_breeds'.tr),
                 const SizedBox(height: 4),
-                const CommonInput(),
+                CommonInput(
+                  onChanged: (String value) {},
+                ),
               ],
             ),
           ),
@@ -47,7 +49,7 @@ class _LandingPageState extends State<LandingPage> {
                         catbreed: e.name ?? '',
                         country: e.origin ?? '',
                         intelligence: '${e.intelligence}',
-                        imageReference: e.referenceImageId??'',
+                        imageReference: e.referenceImageId ?? '',
                       ),
                     ),
                   ],

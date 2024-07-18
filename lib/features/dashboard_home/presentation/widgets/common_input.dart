@@ -2,8 +2,10 @@ part of com.pragmatest.app.dashboardhome.presentation.widgets;
 
 
 class CommonInput extends StatefulWidget {
-  const CommonInput({super.key});
-
+  const CommonInput({
+    required this.onChanged,
+    super.key,});
+  final void Function(String)? onChanged;
   @override
   State<CommonInput> createState() => _CommonInputState();
 }
@@ -17,12 +19,12 @@ class _CommonInputState extends State<CommonInput> {
       ),
       child: TextField(
         maxLines: 1,
-        maxLength: 16,
+        onChanged: widget.onChanged,
         inputFormatters: <TextInputFormatter>[
           FilteringTextInputFormatter.allow(RegExp(r'[a-zA-Z]')),
         ],
         decoration: InputDecoration(
-          hintText: 'Cat Breed',
+          hintText: 'name_city'.tr,
           suffixIcon: const Icon(Icons.search),
           suffixIconColor: const Color(0xFFADBAE6),
           enabledBorder: OutlineInputBorder(
