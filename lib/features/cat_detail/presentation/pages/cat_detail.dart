@@ -30,7 +30,7 @@ class _CatDetailState extends State<CatDetail> {
         ),
         body: Padding(
           padding: const EdgeInsets.symmetric(
-            horizontal: 16,
+            horizontal: UILayout.medium,
           ),
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
@@ -38,7 +38,7 @@ class _CatDetailState extends State<CatDetail> {
               Text(
                 cat.name ?? '',
                 style: const TextStyle(
-                  fontSize: 32,
+                  fontSize: UILayout.mlarge,
                   fontWeight: FontWeight.bold,
                 ),
               ),
@@ -46,7 +46,7 @@ class _CatDetailState extends State<CatDetail> {
               Text(
                 cat.origin ?? '',
                 style: const TextStyle(
-                  fontSize: 24,
+                  fontSize: UILayout.large,
                 ),
               ),
               Spacing.spacingV12,

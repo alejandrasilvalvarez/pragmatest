@@ -15,7 +15,7 @@ class _CommonInputState extends State<CommonInput> {
   Widget build(BuildContext context) => Padding(
         padding: const EdgeInsets.symmetric(
           horizontal: 12,
-          vertical: 8,
+          vertical: UILayout.small,
         ),
         child: TextField(
           maxLines: 1,
@@ -28,7 +28,7 @@ class _CommonInputState extends State<CommonInput> {
             suffixIcon: const Icon(Icons.search),
             suffixIconColor: Colors.purpleBrand[5],
             enabledBorder: OutlineInputBorder(
-              borderRadius: BorderRadius.circular(6),
+              borderRadius: BorderRadius.circular(UILayout.small),
               borderSide: BorderSide(
                 color: Colors.purpleBrand[5]!,
               ),
@@ -47,7 +47,7 @@ class _CommonInputState extends State<CommonInput> {
               ),
             ),
             hintStyle: TextStyle(
-              fontSize: 14,
+              fontSize: UILayout.medium,
               fontWeight: FontWeight.w400,
               color: Colors.purpleBrand[5],
             ),
@@ -55,17 +55,17 @@ class _CommonInputState extends State<CommonInput> {
             isDense: true,
             iconColor: Colors.purpleBrand[5],
             labelStyle: TextStyle(
-              fontSize: 14,
+              fontSize: UILayout.medium,
               fontWeight: FontWeight.w400,
               color: Colors.grey[10],
             ),
             floatingLabelStyle: TextStyle(
-              fontSize: 11,
+              fontSize: UILayout.medium,
               fontWeight: FontWeight.w400,
               color: Colors.purpleBrand[40],
             ),
             errorStyle: TextStyle(
-              fontSize: 11,
+              fontSize: UILayout.medium,
               fontWeight: FontWeight.w400,
               color: Colors.purpleBrand[40],
             ),

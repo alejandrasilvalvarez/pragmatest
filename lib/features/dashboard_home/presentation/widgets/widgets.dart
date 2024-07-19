@@ -6,6 +6,7 @@ import 'package:flutter/services.dart';
 import 'package:get/get.dart';
 
 import '../../../../core/ui/colors_brand.dart';
+import '../../../../core/ui/ui_layout.dart';
 
 
 part './catbreed_card.dart';

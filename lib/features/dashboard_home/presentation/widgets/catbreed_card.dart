@@ -24,8 +24,8 @@ class _CatbreedCardState extends State<CatbreedCard> {
   @override
   Widget build(BuildContext context) => Padding(
         padding: const EdgeInsets.symmetric(
-          horizontal: 20,
-          vertical: 6,
+          horizontal: UILayout.large,
+          vertical: UILayout.small,
         ),
         child: Card(
           color: Colors.white[0],
@@ -36,16 +36,16 @@ class _CatbreedCardState extends State<CatbreedCard> {
               color: Colors.purpleBrand[10]!,
               width: 1,
             ),
-            borderRadius: BorderRadius.circular(10),
+            borderRadius: BorderRadius.circular(UILayout.small),
           ),
           child: SizedBox(
             width: MediaQuery.of(context).size.width,
-            height: MediaQuery.of(context).size.width - 48,
+            height: MediaQuery.of(context).size.width - 54,
             child: Stack(
               children: <Widget>[
                 Center(
                   child: ClipRRect(
-                    borderRadius: BorderRadius.circular(10),
+                    borderRadius: BorderRadius.circular(UILayout.small),
                     child: AspectRatio(
                       aspectRatio: 1,
                       child: CachedNetworkImage(
@@ -71,7 +71,7 @@ class _CatbreedCardState extends State<CatbreedCard> {
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: <Widget>[
                     Padding(
-                      padding: const EdgeInsets.all(16),
+                      padding: const EdgeInsets.all(UILayout.medium),
                       child: Row(
                         mainAxisAlignment: MainAxisAlignment.spaceBetween,
                         children: <Widget>[
@@ -85,13 +85,13 @@ class _CatbreedCardState extends State<CatbreedCard> {
                               ),
                               child: Padding(
                                 padding: const EdgeInsets.symmetric(
-                                  horizontal: 8,
-                                  vertical: 4,
+                                  horizontal: UILayout.small,
+                                  vertical: UILayout.xsmall,
                                 ),
                                 child: Text(
                                   'view_more'.tr,
                                   style: TextStyle(
-                                    fontSize: 16,
+                                    fontSize: UILayout.medium,
                                     color: Colors.white[0],
                                     fontWeight: FontWeight.w500,
                                   ),
@@ -109,8 +109,8 @@ class _CatbreedCardState extends State<CatbreedCard> {
                       ),
                       child: Padding(
                         padding: const EdgeInsets.symmetric(
-                          horizontal: 16,
-                          vertical: 8,
+                          horizontal: UILayout.medium,
+                          vertical: UILayout.small,
                         ),
                         child: Column(
                           crossAxisAlignment: CrossAxisAlignment.start,
@@ -118,7 +118,7 @@ class _CatbreedCardState extends State<CatbreedCard> {
                             Text(
                               widget.catbreed,
                               style: TextStyle(
-                                fontSize: 24,
+                                fontSize: UILayout.large,
                                 fontWeight: FontWeight.bold,
                                 color: Colors.white[0],
                               ),
@@ -135,7 +135,7 @@ class _CatbreedCardState extends State<CatbreedCard> {
                                     Text(
                                       widget.country,
                                       style: TextStyle(
-                                        fontSize: 16,
+                                        fontSize: UILayout.medium,
                                         color: Colors.white[0],
                                       ),
                                     ),
@@ -150,7 +150,7 @@ class _CatbreedCardState extends State<CatbreedCard> {
                                     Text(
                                       widget.intelligence,
                                       style: TextStyle(
-                                        fontSize: 16,
+                                        fontSize: UILayout.medium,
                                         color: Colors.white[0],
                                       ),
                                     ),

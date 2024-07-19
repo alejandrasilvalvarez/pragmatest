@@ -30,8 +30,8 @@ class HabilityCard extends StatelessWidget {
           onTap: onTap,
           child: Padding(
             padding: const EdgeInsets.symmetric(
-              horizontal: 8,
-              vertical: 4,
+              horizontal: UILayout.small,
+              vertical: UILayout.xsmall,
             ),
             child: Row(
               mainAxisAlignment: MainAxisAlignment.start,
@@ -43,10 +43,10 @@ class HabilityCard extends StatelessWidget {
                         : level == 2
                             ? Colors.orangeBrand[30]
                             : Colors.redBrand[30],
-                    borderRadius: BorderRadius.circular(8),
+                    borderRadius: BorderRadius.circular(UILayout.small),
                   ),
                   child: Padding(
-                    padding: const EdgeInsets.all(8),
+                    padding: const EdgeInsets.all(UILayout.small),
                     child: Icon(
                       Icons.lightbulb,
                       color: Colors.white[0],
@@ -65,7 +65,7 @@ class HabilityCard extends StatelessWidget {
                         style: TextStyle(
                           color: Colors.grey[30],
                           fontWeight: FontWeight.bold,
-                          fontSize: 16,
+                          fontSize: UILayout.medium,
                         ),
                       ),
                       Text(
@@ -85,7 +85,7 @@ class HabilityCard extends StatelessWidget {
                     style: TextStyle(
                       color: Colors.grey[20],
                       fontWeight: FontWeight.bold,
-                      fontSize: 24,
+                      fontSize: UILayout.large,
                     ),
                   ),
                 ),
