@@ -66,13 +66,9 @@ class _CatDetailState extends State<CatDetail> {
                     ),
                     errorWidget:
                         (BuildContext context, String url, Object error) =>
-                            Column(
-                      children: <Widget>[
-                        WarningMessage(
-                          message: 'error_loading_image'.tr,
-                          isError: false,
-                        ),
-                      ],
+                            WarningMessage(
+                      message: 'error_loading_image'.tr,
+                      isError: false,
                     ),
                     fit: BoxFit.cover,
                   ),
@@ -112,16 +108,13 @@ class _CatDetailState extends State<CatDetail> {
                                   () {
                                 Navigator.of(ctx).pop(true);
                               });
-
                               return AlertDialog(
                                 content: SizedBox(
-                                  
                                   child: Image.asset(
                                     (cat.intelligence ?? 0) > 3
                                         ? 'assets/images/genius_cat.gif'
                                         : 'assets/images/low_intelligence.gif',
                                     height: 200,
-                                    
                                   ),
                                 ),
                               );
@@ -169,6 +162,20 @@ class _CatDetailState extends State<CatDetail> {
                                 ? 3
                                 : 2,
                         value: '${cat.energyLevel}',
+                        onTap: () {},
+                      ),
+                      const SizedBox(
+                        height: 12,
+                      ),
+                      HabilityCard(
+                        hability: 'adaptability'.tr,
+                        habilityDesc: 'adaptability_desc'.tr,
+                        level: (cat.adaptability ?? 0) > 3
+                            ? 1
+                            : (cat.adaptability ?? 0) < 3
+                                ? 3
+                                : 2,
+                        value: '${cat.adaptability}',
                         onTap: () {},
                       ),
                       const SizedBox(

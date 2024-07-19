@@ -2,7 +2,6 @@ part of com.pragmatest.app.catdetail.presentation.widgets;
 
 class HabilityCard extends StatelessWidget {
   const HabilityCard({
-
     required this.hability,
     required this.habilityDesc,
     required this.level,
@@ -11,7 +10,6 @@ class HabilityCard extends StatelessWidget {
     super.key,
   });
 
- 
   final String hability;
   final String habilityDesc;
   final String value;
@@ -59,30 +57,35 @@ class HabilityCard extends StatelessWidget {
                 const SizedBox(
                   width: 12,
                 ),
-                Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: <Widget>[
-                    Text(
-                      hability,
-                      style: const TextStyle(
-                        color: Color.fromARGB(255, 49, 49, 49),
-                        fontWeight: FontWeight.bold,
-                        fontSize: 16,
+                Expanded(
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: <Widget>[
+                      const SizedBox(
+                        height: 4,
                       ),
-                    ),
-                    SizedBox(
-                      width: MediaQuery.of(context).size.width - 160,
-                      child: Text(
+                      Text(
+                        hability,
+                        style: const TextStyle(
+                          color: Color.fromARGB(255, 49, 49, 49),
+                          fontWeight: FontWeight.bold,
+                          fontSize: 16,
+                        ),
+                      ),
+                      Text(
                         habilityDesc,
                         style: const TextStyle(
                           color: Color.fromARGB(255, 49, 49, 49),
                         ),
                       ),
-                    ),
-                  ],
+                      const SizedBox(
+                        height: 4,
+                      ),
+                    ],
+                  ),
                 ),
                 Padding(
-                  padding: const EdgeInsets.fromLTRB(24, 4, 4, 4),
+                  padding: const EdgeInsets.fromLTRB(24, 4, 12, 4),
                   child: Text(
                     value,
                     style: const TextStyle(

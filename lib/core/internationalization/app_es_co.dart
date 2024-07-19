@@ -16,4 +16,7 @@ Map<String, String> appEsCo = <String, String>{
   'energy_level': 'Nivel de energía',
   'energy_level_desc':
       '''Este nivel dice qué tan activo será tu muchi, diviértete''',
+  'adaptability': 'Adaptabilidad',
+  'adaptability_desc':
+      '''Esperamos tu michi se adapte a un nuevo entorno, pero, conocer qué tan fácil será para él te puede ayudar a saber qué tanto amor y cariño necesite.''',
 };
