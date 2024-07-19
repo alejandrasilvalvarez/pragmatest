@@ -1,4 +1,6 @@
-import 'package:flutter/material.dart';
+import 'package:flutter/material.dart' hide Colors;
+
+import '../../core/ui/colors_brand.dart';
 
 class WarningMessage extends StatelessWidget {
   const WarningMessage({
@@ -23,27 +25,27 @@ class WarningMessage extends StatelessWidget {
               borderRadius: BorderRadius.circular(4),
             ),
             tileColor: isError
-                ? const Color.fromARGB(255, 250, 197, 194)
+                ? Colors.redBrand[10]
                 : isSuccess
-                    ? Colors.green[50]
-                    : Colors.orange[50],
+                    ? Colors.greenBrand[10]
+                    : Colors.orangeBrand[10],
             dense: true,
             leading: Icon(
               isSuccess ? Icons.mail : Icons.warning_amber_rounded,
               color: isError
-                  ? Colors.red[200]
+                  ? Colors.redBrand[20]
                   : isSuccess
-                      ? Colors.green[300]
-                      : Colors.orange[300],
+                      ? Colors.greenBrand[20]
+                      : Colors.orangeBrand[20],
             ),
             title: Align(
               alignment: Alignment.centerLeft,
               child: Text(
                 message,
-                style: const TextStyle(
+                style: TextStyle(
                   fontSize: 14,
                   fontWeight: FontWeight.w400,
-                  color: Colors.black,
+                  color: Colors.black[0],
                 ),
                 maxLines: 8,
                 textAlign: TextAlign.left,

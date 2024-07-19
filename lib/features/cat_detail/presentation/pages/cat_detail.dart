@@ -17,7 +17,7 @@ class _CatDetailState extends State<CatDetail> {
 
   @override
   Widget build(BuildContext context) => Scaffold(
-        backgroundColor: Colors.white,
+        backgroundColor: Colors.white[0],
         appBar: AppBar(
           leading: IconButton(
             onPressed: Get.back,
@@ -25,8 +25,8 @@ class _CatDetailState extends State<CatDetail> {
               Icons.arrow_back_ios,
             ),
           ),
-          surfaceTintColor: Colors.white,
-          backgroundColor: Colors.white,
+          surfaceTintColor: Colors.white[0],
+          backgroundColor: Colors.white[0],
         ),
         body: Padding(
           padding: const EdgeInsets.symmetric(

@@ -18,10 +18,10 @@ class _LandingPageState extends State<LandingPage> {
 
   @override
   Widget build(BuildContext context) => Scaffold(
-        backgroundColor: Colors.white,
+        backgroundColor: Colors.white[0],
         appBar: AppBar(
           backgroundColor: Theme.of(context).colorScheme.onPrimary,
-          surfaceTintColor: Colors.white,
+          surfaceTintColor: Colors.white[0],
           toolbarHeight: 160,
           title: Center(
             child: Column(

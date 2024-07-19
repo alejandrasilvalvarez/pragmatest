@@ -28,12 +28,12 @@ class _CatbreedCardState extends State<CatbreedCard> {
           vertical: 6,
         ),
         child: Card(
-          color: Colors.white,
-          surfaceTintColor: Colors.white,
+          color: Colors.white[0],
+          surfaceTintColor: Colors.white[0],
           elevation: 0.5,
           shape: RoundedRectangleBorder(
-            side: const BorderSide(
-              color: Color.fromARGB(255, 194, 174, 229),
+            side: BorderSide(
+              color: Colors.purpleBrand[10]!,
               width: 1,
             ),
             borderRadius: BorderRadius.circular(10),
@@ -80,12 +80,7 @@ class _CatbreedCardState extends State<CatbreedCard> {
                             onTap: widget.onTapCard,
                             child: DecoratedBox(
                               decoration: BoxDecoration(
-                                color: const Color.fromARGB(
-                                  255,
-                                  196,
-                                  128,
-                                  208,
-                                ),
+                                color: Colors.purpleBrand[30],
                                 borderRadius: BorderRadius.circular(16),
                               ),
                               child: Padding(
@@ -95,9 +90,9 @@ class _CatbreedCardState extends State<CatbreedCard> {
                                 ),
                                 child: Text(
                                   'view_more'.tr,
-                                  style: const TextStyle(
+                                  style: TextStyle(
                                     fontSize: 16,
-                                    color: Colors.white,
+                                    color: Colors.white[0],
                                     fontWeight: FontWeight.w500,
                                   ),
                                 ),
@@ -110,12 +105,7 @@ class _CatbreedCardState extends State<CatbreedCard> {
                     DecoratedBox(
                       decoration: BoxDecoration(
                         borderRadius: BorderRadius.circular(8),
-                        color: const Color.fromARGB(
-                          255,
-                          184,
-                          150,
-                          190,
-                        ),
+                        color: Colors.purpleBrand[20],
                       ),
                       child: Padding(
                         padding: const EdgeInsets.symmetric(
@@ -127,10 +117,10 @@ class _CatbreedCardState extends State<CatbreedCard> {
                           children: <Widget>[
                             Text(
                               widget.catbreed,
-                              style: const TextStyle(
+                              style: TextStyle(
                                 fontSize: 24,
                                 fontWeight: FontWeight.bold,
-                                color: Colors.white,
+                                color: Colors.white[0],
                               ),
                             ),
                             Row(
@@ -138,30 +128,30 @@ class _CatbreedCardState extends State<CatbreedCard> {
                               children: <Widget>[
                                 Row(
                                   children: <Widget>[
-                                    const Icon(
+                                    Icon(
                                       Icons.location_city,
-                                      color: Colors.white,
+                                      color: Colors.white[0],
                                     ),
                                     Text(
                                       widget.country,
-                                      style: const TextStyle(
+                                      style: TextStyle(
                                         fontSize: 16,
-                                        color: Colors.white,
+                                        color: Colors.white[0],
                                       ),
                                     ),
                                   ],
                                 ),
                                 Row(
                                   children: <Widget>[
-                                    const Icon(
+                                    Icon(
                                       Icons.lightbulb,
-                                      color: Colors.white,
+                                      color: Colors.white[0],
                                     ),
                                     Text(
                                       widget.intelligence,
-                                      style: const TextStyle(
+                                      style: TextStyle(
                                         fontSize: 16,
-                                        color: Colors.white,
+                                        color: Colors.white[0],
                                       ),
                                     ),
                                   ],

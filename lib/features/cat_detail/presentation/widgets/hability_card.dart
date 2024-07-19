@@ -21,10 +21,10 @@ class HabilityCard extends StatelessWidget {
         decoration: BoxDecoration(
           borderRadius: BorderRadius.circular(8),
           color: level == 1
-              ? const Color.fromARGB(255, 228, 255, 207)
+              ? Colors.greenBrand[5]
               : level == 2
-                  ? const Color.fromARGB(255, 255, 241, 207)
-                  : const Color.fromARGB(255, 255, 213, 207),
+                  ? Colors.orangeBrand[5]
+                  : Colors.redBrand[5],
         ),
         child: GestureDetector(
           onTap: onTap,
@@ -39,17 +39,17 @@ class HabilityCard extends StatelessWidget {
                 DecoratedBox(
                   decoration: BoxDecoration(
                     color: level == 1
-                        ? const Color.fromARGB(255, 148, 206, 55)
+                        ? Colors.greenBrand[30]
                         : level == 2
-                            ? const Color.fromARGB(255, 251, 181, 75)
-                            : const Color.fromARGB(255, 251, 96, 75),
+                            ? Colors.orangeBrand[30]
+                            : Colors.redBrand[30],
                     borderRadius: BorderRadius.circular(8),
                   ),
-                  child: const Padding(
-                    padding: EdgeInsets.all(8),
+                  child: Padding(
+                    padding: const EdgeInsets.all(8),
                     child: Icon(
                       Icons.lightbulb,
-                      color: Colors.white,
+                      color: Colors.white[0],
                       size: 32,
                     ),
                   ),
@@ -66,16 +66,16 @@ class HabilityCard extends StatelessWidget {
                       ),
                       Text(
                         hability,
-                        style: const TextStyle(
-                          color: Color.fromARGB(255, 49, 49, 49),
+                        style: TextStyle(
+                          color: Colors.grey[30],
                           fontWeight: FontWeight.bold,
                           fontSize: 16,
                         ),
                       ),
                       Text(
                         habilityDesc,
-                        style: const TextStyle(
-                          color: Color.fromARGB(255, 49, 49, 49),
+                        style: TextStyle(
+                          color: Colors.grey[30],
                         ),
                       ),
                       const SizedBox(
@@ -88,8 +88,8 @@ class HabilityCard extends StatelessWidget {
                   padding: const EdgeInsets.fromLTRB(24, 4, 12, 4),
                   child: Text(
                     value,
-                    style: const TextStyle(
-                      color: Color.fromARGB(255, 89, 89, 89),
+                    style: TextStyle(
+                      color: Colors.grey[20],
                       fontWeight: FontWeight.bold,
                       fontSize: 24,
                     ),
