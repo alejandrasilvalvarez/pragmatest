@@ -9,6 +9,7 @@ class LandingPage extends StatefulWidget {
 
 class _LandingPageState extends State<LandingPage> {
   DashboardBloc dashboardBloc = sl<DashboardBloc>();
+  List<CatModel> catsTotal = <CatModel>[];
   @override
   void initState() {
     super.initState();
@@ -28,7 +29,14 @@ class _LandingPageState extends State<LandingPage> {
                 Text('cat_breeds'.tr),
                 const SizedBox(height: 4),
                 CommonInput(
-                  onChanged: (String value) {},
+                  onChanged: (String value) {
+                    dashboardBloc.add(
+                      FilterCatsList(
+                        catsListTotal: catsTotal,
+                        nameToFilter: value,
+                      ),
+                    );
+                  },
                 ),
               ],
             ),
@@ -41,16 +49,22 @@ class _LandingPageState extends State<LandingPage> {
               if (state is DashboardStateLoading) {
                 return const Center(child: CircularProgressIndicator());
               } else if (state is DashboardStateSuccessful) {
+                catsTotal = state.catsListTotal;
                 return Column(
                   mainAxisAlignment: MainAxisAlignment.start,
                   children: <Widget>[
-                    ...state.info.map(
+                    if (state.catsListToShow.isEmpty)
+                      WarningMessage(
+                        message: 'not_cats_on_filter'.tr,
+                        isError: false,
+                      ),
+                    ...state.catsListToShow.map(
                       (CatModel e) => CatbreedCard(
                         catbreed: e.name ?? '',
                         country: e.origin ?? '',
                         intelligence: '${e.intelligence}',
                         imageReference: e.referenceImageId ?? '',
-                        onTapCard: (){
+                        onTapCard: () {
                           Get.toNamed('detail_page', arguments: e);
                         },
                       ),

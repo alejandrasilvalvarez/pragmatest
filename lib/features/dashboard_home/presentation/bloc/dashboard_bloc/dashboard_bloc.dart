@@ -25,12 +25,35 @@ class DashboardBloc extends Bloc<DashboardEvent, DashboardState> {
           (List<CatModel> r) {
             emit(
               DashboardStateSuccessful(
-                info: r,
+                catsListTotal: r,
+                catsListToShow: r,
               ),
             );
           },
         );
       });
+    });
+    on<FilterCatsList>(
+        (FilterCatsList event, Emitter<DashboardState> emit) async {
+      emit(const DashboardStateLoading());
+      List<CatModel> filteredList = <CatModel>[];
+      if (event.nameToFilter.isNotEmpty) {
+        filteredList = event.catsListTotal
+            .where(
+              (CatModel eachCat) => (eachCat.name ?? '').toLowerCase().contains(
+                    event.nameToFilter.toLowerCase(),
+                  ),
+            )
+            .toList();
+      } else if (event.nameToFilter.isEmpty) {
+        filteredList = event.catsListTotal;
+      }
+      emit(
+        DashboardStateSuccessful(
+          catsListTotal: event.catsListTotal,
+          catsListToShow: filteredList,
+        ),
+      );
     });
   }
 }

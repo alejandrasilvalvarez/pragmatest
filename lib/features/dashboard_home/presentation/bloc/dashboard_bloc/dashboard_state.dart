@@ -16,9 +16,11 @@ class DashboardStateError extends DashboardState {
 
 class DashboardStateSuccessful extends DashboardState {
   const DashboardStateSuccessful({
-    required this.info,
+    required this.catsListTotal,
+    required this.catsListToShow,
   });
-  final List<CatModel> info;
+  final List<CatModel> catsListTotal;
+  final List<CatModel> catsListToShow;
 }
 
 class DashboardStateLoading extends DashboardState {
