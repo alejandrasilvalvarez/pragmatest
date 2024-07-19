@@ -27,7 +27,7 @@ class _LandingPageState extends State<LandingPage> {
             child: Column(
               children: <Widget>[
                 Text('cat_breeds'.tr),
-                const SizedBox(height: 4),
+                Spacing.spacingV4,
                 CommonInput(
                   onChanged: (String value) {
                     dashboardBloc.add(

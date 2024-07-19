@@ -54,16 +54,12 @@ class HabilityCard extends StatelessWidget {
                     ),
                   ),
                 ),
-                const SizedBox(
-                  width: 12,
-                ),
+                Spacing.spacingH12,
                 Expanded(
                   child: Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: <Widget>[
-                      const SizedBox(
-                        height: 4,
-                      ),
+                      Spacing.spacingV4,
                       Text(
                         hability,
                         style: TextStyle(
@@ -78,9 +74,7 @@ class HabilityCard extends StatelessWidget {
                           color: Colors.grey[30],
                         ),
                       ),
-                      const SizedBox(
-                        height: 4,
-                      ),
+                      Spacing.spacingV4,
                     ],
                   ),
                 ),

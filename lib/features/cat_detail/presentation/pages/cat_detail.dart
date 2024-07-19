@@ -42,18 +42,14 @@ class _CatDetailState extends State<CatDetail> {
                   fontWeight: FontWeight.bold,
                 ),
               ),
-              const SizedBox(
-                height: 8,
-              ),
+              Spacing.spacingV8,
               Text(
                 cat.origin ?? '',
                 style: const TextStyle(
                   fontSize: 24,
                 ),
               ),
-              const SizedBox(
-                height: 12,
-              ),
+              Spacing.spacingV12,
               SizedBox(
                 height: MediaQuery.of(context).size.height / 3,
                 child: Center(
@@ -74,23 +70,17 @@ class _CatDetailState extends State<CatDetail> {
                   ),
                 ),
               ),
-              const SizedBox(
-                height: 12,
-              ),
+              Spacing.spacingV12,
               Expanded(
                 child: SingleChildScrollView(
                   child: Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: <Widget>[
-                      const SizedBox(
-                        height: 12,
-                      ),
+                      Spacing.spacingV12,
                       Text(
                         cat.description ?? '',
                       ),
-                      const SizedBox(
-                        height: 12,
-                      ),
+                      Spacing.spacingV12,
                       HabilityCard(
                         hability: 'intelligence'.tr,
                         habilityDesc: 'intelectual_level'.tr,
@@ -122,9 +112,7 @@ class _CatDetailState extends State<CatDetail> {
                           );
                         },
                       ),
-                      const SizedBox(
-                        height: 12,
-                      ),
+                      Spacing.spacingV12,
                       HabilityCard(
                         hability: 'affection_level'.tr,
                         habilityDesc: 'affection_level_desc'.tr,
@@ -136,9 +124,7 @@ class _CatDetailState extends State<CatDetail> {
                         value: '${cat.affectionLevel}',
                         onTap: () {},
                       ),
-                      const SizedBox(
-                        height: 12,
-                      ),
+                      Spacing.spacingV12,
                       HabilityCard(
                         hability: 'dog_friendly'.tr,
                         habilityDesc: 'dog_friendly_desc'.tr,
@@ -150,9 +136,7 @@ class _CatDetailState extends State<CatDetail> {
                         value: '${cat.dogFriendly}',
                         onTap: () {},
                       ),
-                      const SizedBox(
-                        height: 12,
-                      ),
+                      Spacing.spacingV12,
                       HabilityCard(
                         hability: 'energy_level'.tr,
                         habilityDesc: 'energy_level_desc'.tr,
@@ -164,9 +148,7 @@ class _CatDetailState extends State<CatDetail> {
                         value: '${cat.energyLevel}',
                         onTap: () {},
                       ),
-                      const SizedBox(
-                        height: 12,
-                      ),
+                      Spacing.spacingV12,
                       HabilityCard(
                         hability: 'adaptability'.tr,
                         habilityDesc: 'adaptability_desc'.tr,
@@ -178,12 +160,7 @@ class _CatDetailState extends State<CatDetail> {
                         value: '${cat.adaptability}',
                         onTap: () {},
                       ),
-                      const SizedBox(
-                        height: 12,
-                      ),
-                      const SizedBox(
-                        height: 12,
-                      ),
+                      Spacing.spacingV24,
                     ],
                   ),
                 ),
