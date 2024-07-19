@@ -30,7 +30,7 @@ dev_dependencies:
   flutter_lints: ^3.0.0
   flutter_test:
     sdk: flutter
-  
+
 
 flutter:
   uses-material-design: true
@@ -39,3 +39,4 @@ flutter:
     - assets/
     - assets/images/genius_cat.gif
     - assets/images/low_intelligence.gif
+    - assets/images/cat_splash.png
